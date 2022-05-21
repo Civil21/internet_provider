@@ -4,6 +4,7 @@ class Complaint < ApplicationRecord
   has_one :solved
   has_many :solveds
 
+  after_create :update_consumer
 
   enum state: {
     open: 0,
@@ -19,5 +20,16 @@ class Complaint < ApplicationRecord
 
   def name
     "#{id}"
+  end
+
+  private
+
+  def update_consumer
+    return unless consumer
+    consumer.update(
+      phone: (consumer.phone || phone),
+      address: (consumer.address || address),
+      user_name: (consumer.user_name || user_name),
+    )
   end
 end

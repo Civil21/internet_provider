@@ -19,6 +19,7 @@ class Ability
     end
 
     if user.admin? || user.system_admin?
+      can :manage, Complaint
       can :manage, Consumer
       can :manage, Solved
     end

@@ -15,6 +15,7 @@ gem "devise"
 gem "activeadmin"
 gem "cancan"
 gem "arctic_admin"
+gem "chartkick"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
