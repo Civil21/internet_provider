@@ -1,0 +1,23 @@
+<%= form_for :complaint, url: complaints_path, html: {class:"p-5"} do |f|%>
+  <div class="form-group">
+    <%=f.label :consumer  %>
+    <%=f.text_field :consumer , class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%=f.label :user_name  %>
+    <%=f.text_field :user_name , class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%=f.label :phone  %>
+    <%=f.text_field :phone , class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%=f.label :address  %>
+    <%=f.text_field :address, class:"form-control"   %>
+  </div>
+  <div class="form-group">
+    <%=f.label :text  %>
+    <%=f.text_area :text, class:"form-control", rows: 3 %>
+  </div>
+  <%= f.submit "Повідомити", class:"btn btn-primary mt-2"%>
+<%end%>
