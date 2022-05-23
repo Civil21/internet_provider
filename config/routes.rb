@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :complaints, only: [:new,:create,:show]
+  resources :complaints, only: [:new,:create,:show,:index]
   root to:'pages#home'
   devise_for :employees, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

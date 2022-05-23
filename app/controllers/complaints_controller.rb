@@ -14,6 +14,10 @@ class ComplaintsController < ApplicationController
     @solveds = @complaint.solveds
   end
 
+  def index
+    @complaints = Complaint.all
+  end
+
   private
 
   def complaint_params
